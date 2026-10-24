@@ -1,0 +1,119 @@
+class Person {
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void display() {
+        System.out.println("Name : " + name);
+        System.out.println("Age  : " + age);
+    }
+}
+
+class Student extends Person {
+    String course;
+    int rollNumber;
+
+    Student(String name, int age, String course, int rollNumber) {
+        super(name, age);
+        this.course = course;
+        this.rollNumber = rollNumber;
+    }
+
+    void display() {
+        super.display();
+        System.out.println("Course      : " + course);
+        System.out.println("Roll Number : " + rollNumber);
+    }
+}
+
+class GraduateStudent extends Student {
+    int graduationYear;
+
+    GraduateStudent(String name, int age, String course, int rollNumber, int graduationYear) {
+        super(name, age, course, rollNumber);
+        this.graduationYear = graduationYear;
+    }
+
+    void display() {
+        super.display();
+        System.out.println("Graduation Year : " + graduationYear);
+    }
+}
+
+class Teacher extends Person {
+    String subject;
+    double salary;
+
+    Teacher(String name, int age, String subject, double salary) {
+        super(name, age);
+        this.subject = subject;
+        this.salary = salary;
+    }
+
+    void display() {
+        super.display();
+        System.out.println("Subject : " + subject);
+        System.out.println("Salary  : " + salary);
+    }
+}
+
+class Administrator extends Person {
+    String department;
+    int experience;
+
+    Administrator(String name, int age, String department, int experience) {
+        super(name, age);
+        this.department = department;
+        this.experience = experience;
+    }
+
+    void display() {
+        super.display();
+        System.out.println("Department : " + department);
+        System.out.println("Experience : " + experience + " years");
+    }
+}
+
+public class InheritanceDemo {
+    public static void main(String[] args) {
+
+        System.out.println("--- Single Inheritance (Student) ---");
+        Student s = new Student("Rushikesh", 20, "AI & DS", 21);
+        s.display();
+
+        System.out.println("\n--- Multilevel Inheritance (GraduateStudent) ---");
+        GraduateStudent g = new GraduateStudent("Amit", 22, "AI & DS", 45, 2026);
+        g.display();
+
+        System.out.println("\n--- Hierarchical Inheritance (Teacher) ---");
+        Teacher t = new Teacher("Mrs. Patil", 35, "Java", 55000);
+        t.display();
+
+        System.out.println("\n--- Hierarchical Inheritance (Administrator) ---");
+        Administrator a = new Administrator("Mr. Joshi", 40, "Admissions", 12);
+        a.display();
+
+        System.out.println("\n--- Exception Handling ---");
+        try {
+            int x = 10, y = 0;
+            int result = x / y;                  // causes ArithmeticException
+            System.out.println("Result = " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        } finally {
+            System.out.println("finally block always executes");
+        }
+
+        try {
+            if (s.age < 18)
+                throw new Exception("Student is under 18");
+            System.out.println("Age check passed for " + s.name);
+        } catch (Exception e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
