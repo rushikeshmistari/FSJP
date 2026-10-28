@@ -1,0 +1,30 @@
+import java.util.Scanner;
+class Calculator {
+    static Scanner sc = new Scanner(System.in);
+    Calculator() {
+        System.out.println("Welcome");
+    }
+    Calculator(int a, int b) {
+        System.out.println("Sum: " + (a + b));
+    }
+    void add() {
+        System.out.println("Sum: " + 15);
+    }
+    void add(int a, int b) {
+        System.out.println("Sum: " + (a + b));
+    }
+    void add(float a, float b, float c) {
+        System.out.println("Sum: " + (a + b + c));
+    }
+    public static void main(String[] args) {
+        Calculator c1 = new Calculator();
+        System.out.print("Enter two integers: ");
+        int a = sc.nextInt(), b = sc.nextInt();
+        Calculator c2 = new Calculator(a, b);
+        c1.add();
+        c1.add(a, b);
+        System.out.print("Enter three floats: ");
+        c1.add(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
+    }
+}
+
