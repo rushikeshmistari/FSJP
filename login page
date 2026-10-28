@@ -1,0 +1,44 @@
+.JSP
+<% if ("success".equals(request.getParameter("status"))) { %>
+<h2>Login Successful!</h2>
+<% } else if ("error".equals(request.getParameter("status"))) { %>
+<h2>Invalid Login!</h2>
+<% } else { %>
+<form action="login" method="post">
+<input name="username" placeholder="Username">
+<input name="password" type="password" placeholder="Password">
+<input type="submit" value="Login">
+</form>
+<% } %>
+
+.JAVA
+import java.io.*;
+import java.sql.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest req,
+            HttpServletResponse res) throws IOException {
+        try {
+            Connection c = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/login_db", "root", "root");
+            PreparedStatement p = c.prepareStatement(
+                "SELECT * FROM users WHERE username=? AND password=?");
+            p.setString(1, req.getParameter("username"));
+            p.setString(2, req.getParameter("password"));
+            ResultSet r = p.executeQuery();
+            res.sendRedirect("login.jsp?status=" +
+                (r.next() ? "success" : "error"));
+            c.close();
+        } catch (Exception e) {
+            res.getWriter().print("Database Error");
+        }
+    }
+}
+
+.SQL
+CREATE DATABASE login_db;
+USE login_db;
+CREATE TABLE users(username VARCHAR(30), password VARCHAR(30));
+INSERT INTO users VALUES('Shitanshu','1234');
