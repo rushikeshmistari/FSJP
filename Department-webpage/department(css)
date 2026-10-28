@@ -1,0 +1,13 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #222; }
+header { text-align: center; padding: 28px 15px; color: white; background: #174a7e; }
+header h1 { margin: 0 0 8px; }
+nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; padding: 12px; background: #12365a; }
+nav a { color: white; text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+main { max-width: 900px; margin: auto; padding: 20px; }
+section { padding: 12px 0; }
+section h2 { color: #174a7e; }
+.card { display: inline-block; width: 29%; min-width: 180px; margin: 1%; padding: 14px; vertical-align: top; background: #eef2f7; border-radius: 7px; }
+footer { text-align: center; padding: 12px; background: #12365a; color: white; }
+@media (max-width: 600px) { .card { display: block; width: 100%; margin: 10px 0; } }
