@@ -1,0 +1,52 @@
+import java.util.Scanner;
+class Person {
+    String name;
+    int age;
+    Person(String n, int a) { name=n; age=a; }
+    void show() { System.out.println(name+" "+age); }
+}
+class Student extends Person {
+    String course;
+    Student(String n,int a,String c) {
+        super(n,a); course=c;
+    }
+}
+class Graduate extends Student {
+    int year;
+    Graduate(String n,int a,String c,int y) {
+        super(n,a,c); year=y;
+    }
+}
+class Teacher extends Person {
+    Teacher(String n,int a) { super(n,a); }
+}
+class Administrator extends Person {
+    Administrator(String n,int a) { super(n,a); }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        try {
+            System.out.print("Enter student name, age, course: ");
+            Student s=new Student(sc.next(),sc.nextInt(),sc.next());
+            s.show();
+            System.out.println(s.course);
+            System.out.print("Enter graduate name, age, course, year: ");
+            Graduate g=new Graduate(sc.next(),sc.nextInt(),
+                                    sc.next(),sc.nextInt());
+            g.show();
+            System.out.println(g.course+" "+g.year);
+            System.out.print("Enter teacher name and age: ");
+            Teacher t=new Teacher(sc.next(),sc.nextInt());
+            t.show();
+            System.out.print("Enter admin name and age: ");
+            Administrator a=new Administrator(sc.next(),sc.nextInt());
+            a.show();
+            int x=10/0;
+        } catch(Exception e) {
+            System.out.println("Error handled");
+        }
+        sc.close();
+    }
+}
+
