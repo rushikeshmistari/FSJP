@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS college;
+USE college;
+CREATE TABLE IF NOT EXISTS students (
+    roll_no INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    marks FLOAT NOT NULL
+);
