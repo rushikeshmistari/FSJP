@@ -1,0 +1,22 @@
+.html
+
+<html>
+<body>
+<h3>Email Validation</h3>
+<input id="email" placeholder="Enter email">
+<button onclick="check()">Submit</button>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+.js
+function check() {
+    let e = document.getElementById("email").value;
+
+    if (e.indexOf("@") == -1 || e.indexOf(".") == -1)
+        alert("Invalid Email! Enter again.");
+    else
+        alert("Valid Email Address!");
+}
+
