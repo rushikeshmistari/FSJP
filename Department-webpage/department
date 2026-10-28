@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI and Data Science Department</title>
+<link rel="stylesheet" href="department.css">
+</head>
+<body>
+<header>
+    <h1>Department of Artificial Intelligence and Data Science</h1>
+    <p>Vidyavardhini College of Engineering and Technology</p>
+</header>
+<nav><a href="#about">About</a><a href="#faculty">Faculty</a><a href="#courses">Courses</a><a href="#contact">Contact</a></nav>
+<main>
+    <section id="about">
+        <h2>About the Department</h2>
+        <p>The department introduces students to programming, data analysis, artificial intelligence and machine learning.</p>
+    </section>
+    <section id="faculty">
+        <h2>Faculty Details</h2>
+        <div class="card"><h3>Dr. A. Sharma</h3><p>Head of Department</p></div>
+        <div class="card"><h3>Prof. R. Patil</h3><p>Faculty, Data Science</p></div>
+        <div class="card"><h3>Prof. S. Deshmukh</h3><p>Faculty, Programming</p></div>
+    </section>
+    <section id="courses">
+        <h2>Course Information</h2>
+        <ul><li>Programming with Java</li><li>Database Management Systems</li><li>Artificial Intelligence</li><li>Machine Learning</li></ul>
+    </section>
+    <section id="contact">
+        <h2>Contact Details</h2>
+        <p>Email: aids.department@example.com</p>
+        <p>Address: Vidyavardhini College of Engineering and Technology, Maharashtra, India</p>
+    </section>
+</main>
+<footer><p>&copy; AI and Data Science Department</p></footer>
+</body>
+</html>
