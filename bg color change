@@ -1,0 +1,18 @@
+.html
+
+<html>
+<body>
+<h2>Background Color Change</h2>
+<script src="script.js"></script>
+</body>
+</html>
+
+.js
+
+let colors = ["red", "blue", "green", "yellow"];
+let i = 0;
+
+setInterval(function() {
+    document.body.style.backgroundColor = colors[i];
+    i = (i + 1) % colors.length;
+}, 5000);
