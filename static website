@@ -1,0 +1,36 @@
+.html
+<html>
+<head>
+<title>My Project</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>My Project Website</h1>
+<p>Welcome to my FSJP project!</p>
+<button onclick="show()">Click Me</button>
+<p id="msg"></p>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+.css
+body {
+    background: lightblue;
+    text-align: center;
+    font-family: Arial;
+}
+h1 {
+    background: navy;
+    color: white;
+    padding: 15px;
+}
+button {
+    padding: 10px;
+}
+
+
+.js
+function show() {
+    document.getElementById("msg").innerHTML = "Welcome to FSJP!";
+}
