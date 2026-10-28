@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form Validation</title>
+<style>
+body { font-family: Arial, sans-serif; max-width: 420px; margin: 35px auto; padding: 20px; }
+label { display: block; margin-top: 12px; }
+input { width: 100%; padding: 9px; margin-top: 5px; box-sizing: border-box; }
+button { margin-top: 16px; padding: 9px 16px; }
+#message { margin-top: 14px; }
+</style>
+</head>
+<body>
+<h2>Student Registration</h2>
+<form id="registrationForm" novalidate>
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="text">
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+    <button type="submit">Register</button>
+</form>
+<p id="message" role="status"></p>
+<script>
+document.getElementById("registrationForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const message = document.getElementById("message");
+
+    if (name.length < 2) {
+        message.textContent = "Please enter a valid name.";
+    } else if (!emailPattern.test(email)) {
+        message.textContent = "Please enter a valid email address.";
+    } else if (password.length < 6) {
+        message.textContent = "Password must contain at least 6 characters.";
+    } else {
+        message.textContent = "Registration form validated successfully.";
+    }
+});
+</script>
+</body>
+</html>
